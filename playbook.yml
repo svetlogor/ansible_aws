@@ -1,0 +1,8 @@
+---
+- name: Bootstrapping server EC2 Build on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - build_aws
