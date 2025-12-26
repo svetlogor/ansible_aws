@@ -1,6 +1,6 @@
 ---
 # tasks file for build_aws
-- name: Creating EC2 security group
+- name: creating EC2 security group
   amazon.aws.ec2_security_group:
     name: "{{ aws_name_security_group }}"
     description: EC2 group
@@ -11,7 +11,13 @@
         to_port: "{{ aws_to_port_security_group }}"
         cidr_ip: "{{ aws_cidr_ip_security_group }}"
 
-- name: Creating EC2 Build on AWS
+- name: create a new EC2 key pair and save private key into a file
+  amazon.aws.ec2_key:
+    name: "{{ aws_key_name }}"
+    file_name: "{{ aws_file_name_key }}"
+  no_log: true
+
+- name: creating EC2 Build on AWS
   amazon.aws.ec2_instance:
     aws_access_key_id: "{{ aws_access_key }}"
     aws_secret_access_key: "{{ aws_secret_key }}"
