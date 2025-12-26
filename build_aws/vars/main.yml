@@ -2,5 +2,5 @@
 # vars file for build_aws
 ec2_name: "aws_build"
 aws_instance: "t3.micro"
-aws_ami_id: "ami-01fd6fa49060e89a6"
+aws_ami_id: "ami-0fa91bc90632c73c9"
 key: "/root/.ssh/id_ed25519.pub"
