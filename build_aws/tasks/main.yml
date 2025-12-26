@@ -31,4 +31,5 @@
     instance_type: "{{ aws_instance }}"
     image_id: "{{ aws_ami_id }}"
     key_name: "{{ aws_key_name }}"
+    security_group: "{{ aws_name_security_group }}"
     wait: true
