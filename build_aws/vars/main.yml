@@ -1,2 +1,5 @@
 ---
 # vars file for build_aws
+ec2_name: "aws_build"
+aws_instance: "t3.micro"
+aws_image_id: "ami-0fa91bc90632c73c9"
