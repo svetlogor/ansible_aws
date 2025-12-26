@@ -1,2 +1,7 @@
 ---
 # tasks file for build_aws
+- name: Creating EC2 Build on AWS
+  amazon.aws.ec2_instance:
+    aws_secret_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
