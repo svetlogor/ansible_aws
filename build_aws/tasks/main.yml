@@ -7,7 +7,6 @@
     region: "{{ aws_region }}"
     name: "{{ aws_name_security_group }}"
     description: EC2 group
-    vpc_id: "{{ aws_vpc_id_security_group }}"
     rules:
       - proto: "{{ aws_protocol_security_group }}"
         from_port: "{{ aws_from_port_security_group }}"
