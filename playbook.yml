@@ -9,3 +9,12 @@
   roles:
     - build_aws
 
+- name: Bootstrapping server EC2 Prod on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - secret_file.yml
+
+  roles:
+    - prod_aws
