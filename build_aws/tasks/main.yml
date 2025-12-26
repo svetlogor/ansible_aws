@@ -2,6 +2,9 @@
 # tasks file for build_aws
 - name: creating EC2 security group
   amazon.aws.ec2_security_group:
+    aws_access_key_id: "{{ aws_access_key }}"
+    aws_secret_access_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
     name: "{{ aws_name_security_group }}"
     description: EC2 group
     vpc_id: "{{ aws_vpc_id_security_group }}"
@@ -13,6 +16,9 @@
 
 - name: create a new EC2 key pair and save private key into a file
   amazon.aws.ec2_key:
+    aws_access_key_id: "{{ aws_access_key }}"
+    aws_secret_access_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
     name: "{{ aws_key_name }}"
     file_name: "{{ aws_file_name_key }}"
   no_log: true
