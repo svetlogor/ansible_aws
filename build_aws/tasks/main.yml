@@ -8,4 +8,5 @@
     name: "{{ ec2_name }}"
     instance_type: "{{ aws_instance }}"
     image_id: "{{ aws_ami_id }}"
+    key_name: "{{ key }}"
     wait: true
