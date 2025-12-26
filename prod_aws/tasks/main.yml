@@ -1,2 +1,13 @@
 ---
 # tasks file for prod_aws
+- name: creating EC2 Prod on AWS
+  amazon.aws.ec2_instance:
+    aws_access_key_id: "{{ aws_access_key }}"
+    aws_secret_access_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
+    name: "{{ ec2_name }}"
+    instance_type: "{{ aws_instance }}"
+    image_id: "{{ aws_ami_id }}"
+    key_name: "{{ aws_key_name }}"
+    security_group: "{{ aws_name_security_group }}"
+    wait: true

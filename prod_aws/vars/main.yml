@@ -1,2 +1,12 @@
 ---
 # vars file for prod_aws
+ec2_name: "aws_prod"
+aws_instance: "t3.micro"
+aws_ami_id: "ami-0fa91bc90632c73c9"
+aws_region: "eu-north-1"
+aws_name_security_group: "group_ssh"
+aws_protocol_security_group: "tcp"
+aws_from_port_security_group: "22"
+aws_to_port_security_group: "22"
+aws_cidr_ip_security_group: "0.0.0.0/0"
+aws_key_name: "ansible_key"
