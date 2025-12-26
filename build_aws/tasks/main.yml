@@ -7,4 +7,5 @@
     region: "{{ aws_region }}"
     name: "{{ ec2_name }}"
     instance_type: "{{ aws_instance }}"
-    image_id: "{{ aws_image_id }}"
+    image_id: "{{ aws_ami_id }}"
+    wait: true
