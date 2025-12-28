@@ -25,3 +25,8 @@
     src: "{{ puth_java_app }}/target/{{ name_war }}"
     dest: "{{ puth_tomcat }}"
     remote_src: yes
+
+- name: storing file .WAR into localhost /tmp/
+  fetch:
+    src: "{{ puth_tomcat }}/{{ name_war }}"
+    dest: "/tmp/{{ name_war }}"

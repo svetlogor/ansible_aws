@@ -5,8 +5,13 @@
   with_items:
     - "{{ version_tomcat }}"
 
-- name: Transfer files from Build to Prod
-  synchronize:
-    src: "{{ puth_tomcat }}/{{ name_war }}"
+- name: copying file a localhost /tmp/.war on Prod EC2
+  copy:
+    src: "/tmp/{{ name_war }}"
     dest: "{{ puth_tomcat }}"
-  delegate_to: build_ec2
+
+#- name: Transfer files from Build to Prod
+#  synchronize:
+#    src: "{{ puth_tomcat }}/{{ name_war }}"
+#    dest: "{{ puth_tomcat }}"
+#  delegate_to: build_ec2
