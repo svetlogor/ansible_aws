@@ -28,5 +28,5 @@
 
 - name: storing file .WAR into localhost /tmp/
   fetch:
-    src: "{{ puth_tomcat }}/{{ name_war }}"
-    dest: "/tmp/{{ name_war }}"
+    src: "{{ puth_tomcat }}/{{ name_app }}"
+    dest: "/tmp/{{ name_app }}"

@@ -3,4 +3,5 @@
 url_git: 'https://github.com/WebEngineering-Univaq/Java_WebApp_Base_T10.git'
 puth_java_app: /home/ubuntu/java-app
 puth_tomcat: /var/lib/tomcat10/webapps
-name_war: BaseWebApp-T10-1.0-SNAPSHOT
+name_war: BaseWebApp-T10-1.0-SNAPSHOT.war
+name_app: BaseWebApp-T10-1.0-SNAPSHOT
