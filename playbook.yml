@@ -1,5 +1,5 @@
 ---
-- name: Bootstrapping server EC2 Build on AWS
+- name: creating server EC2 Build on AWS
   hosts: localhost
   connection: local
   gather_facts: false
@@ -9,7 +9,7 @@
   roles:
     - build_aws
 
-- name: Bootstrapping server EC2 Prod on AWS
+- name: creating server EC2 Prod on AWS
   hosts: localhost
   connection: local
   gather_facts: false
@@ -18,3 +18,10 @@
 
   roles:
     - prod_aws
+
+- name: bootstrapping server Build on EC2
+  hosts: build_ec2
+  become: yes
+
+  roles:
+    - role_build

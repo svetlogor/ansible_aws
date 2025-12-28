@@ -1,2 +1,27 @@
 ---
 # tasks file for build_java
+- name: installing packages. Ensure package is present
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+      - default-jdk
+      - maven
+      - tomcat9
+
+- name: cloning a repository
+  git:
+    repo: "{{ url_git }}"
+    dest: "{{ puth_java_app }}"
+
+- name: run command mvn package
+  command:
+    chdir: "{{ puth_java_app }}"
+    cmd: mvn package
+
+- name: copying a .war to a tomcat9/webapps
+  copy:
+    src: "{{ puth_java_app }}/target/{{ name_war }}"
+    dest: "{{ puth_tomcat }}"
+    remote_src: yes
