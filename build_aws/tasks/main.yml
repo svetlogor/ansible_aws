@@ -33,11 +33,11 @@
     key_name: "{{ aws_key_name }}"
     security_group: "{{ aws_name_security_group }}"
     wait: true
-  register: build_was_value
+  register: build_aws_value
 
 - name: adding a public IP to the inventory
   add_host:
-    name: "{{ build_was_value.instances[0].public_ip_address }}"
+    name: "{{ build_aws_value.instances[0].public_ip_address }}"
     groups: build_ec2
     ansible_user: ubuntu
     ansible_ssh_private_key_file: "{{ key_ssh_private }}"

@@ -11,3 +11,11 @@
     key_name: "{{ aws_key_name }}"
     security_group: "{{ aws_name_security_group }}"
     wait: true
+  register: prod_aws_value
+
+- name: adding a public IP to the inventory
+  add_host:
+    name: "{{ prod_aws_value.instances[0].public_ip_address }}"
+    groups: prod_ec2
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: "{{ key_ssh_private }}"
