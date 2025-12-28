@@ -1,5 +1,18 @@
 ---
 # tasks file for prod_aws
+- name: creating EC2 security group
+  amazon.aws.ec2_security_group:
+    aws_access_key_id: "{{ aws_access_key }}"
+    aws_secret_access_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
+    name: "{{ aws_name_security_group_80 }}"
+    description: EC2 group
+    rules:
+      - proto: "{{ aws_protocol_security_group }}"
+        from_port: "{{ aws_from_port_security_group }}"
+        to_port: "{{ aws_to_port_security_group }}"
+        cidr_ip: "{{ aws_cidr_ip_security_group }}"
+
 - name: creating EC2 Prod on AWS
   amazon.aws.ec2_instance:
     aws_access_key_id: "{{ aws_access_key }}"
@@ -9,7 +22,9 @@
     instance_type: "{{ aws_instance }}"
     image_id: "{{ aws_ami_id }}"
     key_name: "{{ aws_key_name }}"
-    security_group: "{{ aws_name_security_group }}"
+    security_groups:
+      - "{{ aws_name_security_group }}"
+      - "{{ aws_name_security_group_80 }}"
     wait: true
   register: prod_aws_value
 
