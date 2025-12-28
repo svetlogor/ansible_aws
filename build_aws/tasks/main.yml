@@ -37,7 +37,7 @@
 
 - name: adding a public IP to the inventory
   add_host:
-    name: "{{ build_was_value.instance[0].public_ip_address }}"
+    name: "{{ build_was_value.instances[0].public_ip_address }}"
     groups: build_ec2
-#    ansible_user: ubuntu
-#    ansible_ssh_private_key_file: "{{ key_ssh_private }}"
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: "{{ key_ssh_private }}"
