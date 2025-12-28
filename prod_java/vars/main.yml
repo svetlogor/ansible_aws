@@ -1,2 +1,6 @@
 ---
 # vars file for prod_java
+puth_tomcat: /var/lib/tomcat10/webapps
+name_war: BaseWebApp-T10-1.0-SNAPSHOT.war
+#server_build_ip: 89.169.180.248
+version_tomcat: "tomcat10"

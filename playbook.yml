@@ -25,3 +25,10 @@
 
   roles:
     - build_java
+
+- name: bootstrapping server Prod on EC2
+  hosts: prod_ec2
+  become: yes
+
+  roles:
+    - prod_java

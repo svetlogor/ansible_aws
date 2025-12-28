@@ -1,2 +1,12 @@
 ---
 # tasks file for prod_java
+- name: Installing packages. Ensure package is present
+  apt: name="{{ item }}" state=present update_cache=true
+  with_items:
+    - "{{ version_tomcat }}"
+
+- name: Transfer files from Build to Prod
+  synchronize:
+    src: "{{ puth_tomcat }}/{{ name_war }}"
+    dest: "{{ puth_tomcat }}"
+  delegate_to: "{{ build_aws_value.instances[0].public_ip_address }}"
