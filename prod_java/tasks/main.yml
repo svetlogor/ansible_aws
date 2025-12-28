@@ -9,4 +9,4 @@
   synchronize:
     src: "{{ puth_tomcat }}/{{ name_war }}"
     dest: "{{ puth_tomcat }}"
-  delegate_to: "{{ build_aws_value.instances[0].public_ip_address }}"
+  delegate_to: build_ec2
