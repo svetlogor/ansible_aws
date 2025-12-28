@@ -8,7 +8,7 @@
   with_items:
       - default-jdk
       - maven
-      - tomcat9
+      - tomcat10
 
 - name: cloning a repository
   git:
@@ -20,7 +20,7 @@
     chdir: "{{ puth_java_app }}"
     cmd: mvn package
 
-- name: copying a .war to a tomcat9/webapps
+- name: copying a .war to a tomcat10/webapps
   copy:
     src: "{{ puth_java_app }}/target/{{ name_war }}"
     dest: "{{ puth_tomcat }}"

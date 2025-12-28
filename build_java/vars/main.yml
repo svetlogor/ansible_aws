@@ -1,6 +1,6 @@
 ---
 # vars file for build_java
 url_git: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-puth_java_app: /home/devops2/java-app
-puth_tomcat: /var/lib/tomcat9/webapps
+puth_java_app: /home/ubuntu/java-app
+puth_tomcat: /var/lib/tomcat10/webapps
 name_war: hello-1.0.war
