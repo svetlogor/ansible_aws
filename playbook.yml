@@ -24,4 +24,4 @@
   become: yes
 
   roles:
-    - role_build
+    - build_java
